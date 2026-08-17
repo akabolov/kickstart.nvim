@@ -491,15 +491,15 @@ do
 
   -- See `:help telescope` and `:help telescope.setup()`
   require('telescope').setup {
-    -- You can put your default mappings / updates / etc. in here
-    --  All the info you're looking for is in `:help telescope.setup()`
-    --
-    -- defaults = {
-    --   mappings = {
-    --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-    --   },
-    -- },
-    -- pickers = {}
+    defaults = {
+      border = false,
+      layout_strategy = 'flex',
+      layout_config = {
+        width = { padding = 0 },
+        height = { padding = 0 },
+        prompt_position = 'top',
+      },
+    },
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
     },
@@ -980,6 +980,8 @@ do
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   require 'custom.plugins'
+  require 'custom.options'
+  require 'custom.keymaps'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
